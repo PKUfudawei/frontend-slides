@@ -139,7 +139,7 @@ Do not ask the user whether they want options or a preset picker. The default di
 
 If the user already gave a vibe, use it. If they did not, infer the likely mood from the occasion, audience, content, and stakes. Keep the options diverse enough that the user can react visually instead of needing to articulate taste up front.
 
-If the user explicitly names a preset or bold template, honor that as one option and generate the remaining preview slots around it.
+If the user explicitly names a preset or bold template, honor that as one option and generate the remaining preview slots around it. Match named bold templates against `slug`, `name`, and optional `aliases` in the selection index, ignoring case. `PKUfudawei` and `Teal Professional` both resolve to `teal-professional` (Teal Professional (PKUfudawei)); use its own preview and design documents.
 
 Read [STYLE_PRESETS.md](STYLE_PRESETS.md) for safe preset candidates. If [bold-template-pack/selection-index.json](bold-template-pack/selection-index.json) exists, read that compact index too, but do not read any `design.md` files yet.
 

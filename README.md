@@ -1,6 +1,6 @@
 # Frontend Slides
 
-A coding-agent skill for creating stunning HTML presentations — from scratch or by converting PowerPoint files. It is packaged as a Claude Code plugin, and the core `SKILL.md` can also be read by other coding agents with filesystem and shell access.
+A coding-agent skill for creating stunning HTML presentations — from scratch or by converting PowerPoint files. The core `SKILL.md` can be installed as a standalone skill or read directly by coding agents with filesystem and shell access.
 
 ## 📺 Watch the Walkthrough & Tutorial
 
@@ -31,24 +31,6 @@ https://github.com/user-attachments/assets/ef57333e-f879-432a-afb9-180388982478
 
 ## Installation
 
-### Via Claude Code Custom Marketplace Source
-
-Install directly from this public GitHub repo. Run these as two separate Claude Code messages; do not paste both lines into the prompt at once.
-
-```text
-/plugin marketplace add https://github.com/zarazhangrui/frontend-slides
-```
-
-After that finishes, run:
-
-```text
-/plugin install frontend-slides@frontend-slides
-```
-
-Use the HTTPS URL. The shorter `zarazhangrui/frontend-slides` form may make Claude Code try SSH, which can fail if GitHub is not already in your `known_hosts` file.
-
-Then use it by typing `/frontend-slides:frontend-slides` in Claude Code. Claude Code namespaces plugin-installed skills as `/plugin-name:skill-name`.
-
 ### Claude Code Manual Installation
 
 Copy the skill files to your Claude Code skills directory:
@@ -66,17 +48,17 @@ cp scripts/extract-pptx.py scripts/deploy.sh scripts/export-pdf.sh ~/.claude/ski
 Or clone directly:
 
 ```bash
-git clone https://github.com/zarazhangrui/frontend-slides.git ~/.claude/skills/frontend-slides
+git clone https://github.com/PKUfudawei/frontend-slides.git ~/.claude/skills/frontend-slides
 ```
 
-Then use it by typing `/frontend-slides` in Claude Code. Standalone skills are not namespaced.
+Then use it by typing `/frontend-slides` in Claude Code.
 
 ### Other Coding Agents
 
 Agents such as Codex, Kimi Code, OpenCode, Gemini CLI, or other local coding assistants can use the same core skill. The simplest path is to send the agent this GitHub repo link and ask it to use the Frontend Slides skill:
 
 ```text
-https://github.com/zarazhangrui/frontend-slides
+https://github.com/PKUfudawei/frontend-slides
 ```
 
 If the agent can read GitHub repos or browse files, it should start from `SKILL.md` and load only the referenced support files it needs:
@@ -90,9 +72,9 @@ If the agent can read GitHub repos or browse files, it should start from `SKILL.
 
 Some agents can also install the skill for you if they have filesystem access and a known local skills directory. If not, they can still follow `SKILL.md` directly for the current session.
 
-The Claude Code plugin gives Claude Code a custom marketplace-source install flow and `/frontend-slides:frontend-slides` command. Other agents usually do not use that command surface.
-
 ## Usage
+
+This fork includes **Teal Professional (PKUfudawei)**. Ask: "Use frontend-slides with the PKUfudawei theme for my presentation." The alias is bundled in the standalone skill; no separate template-library installation is needed.
 
 ### Create a New Presentation
 
@@ -172,7 +154,7 @@ the agent expands that preview's own CSS and layout system into the full deck.
 
 ## Bold Template Gallery
 
-Frontend Slides can now draw from the 34 bold design systems in [`beautiful-html-templates`](https://github.com/zarazhangrui/beautiful-html-templates). Three screenshots per template show how each visual system handles different slide layouts. Click any template name to inspect the source template library.
+Frontend Slides includes 35 bold design systems: 34 from [`beautiful-html-templates`](https://github.com/zarazhangrui/beautiful-html-templates), plus [Teal Professional (PKUfudawei)](https://github.com/PKUfudawei/beautiful-html-templates/tree/main/templates/teal-professional/) from the PKUfudawei fork. Three screenshots per template show how each visual system handles different slide layouts. Click any template name to inspect the source template library.
 
 ### [Soft Editorial](https://github.com/zarazhangrui/beautiful-html-templates/tree/main/templates/soft-editorial/)
 
@@ -343,6 +325,16 @@ Frontend Slides can now draw from the 34 bold design systems in [`beautiful-html
 </p>
 
 > Cream paper background with electric cobalt blue accents; clean modern professional.
+
+### [Teal Professional (PKUfudawei)](https://github.com/PKUfudawei/beautiful-html-templates/tree/main/templates/teal-professional/)
+
+<p>
+  <img src="https://raw.githubusercontent.com/PKUfudawei/beautiful-html-templates/main/screenshots/teal-professional-1.png" width="32.5%" alt="Teal Professional (PKUfudawei) — slide 1" />
+  <img src="https://raw.githubusercontent.com/PKUfudawei/beautiful-html-templates/main/screenshots/teal-professional-6.png" width="32.5%" alt="Teal Professional (PKUfudawei) — slide 6" />
+  <img src="https://raw.githubusercontent.com/PKUfudawei/beautiful-html-templates/main/screenshots/teal-professional-8.png" width="32.5%" alt="Teal Professional (PKUfudawei) — slide 8" />
+</p>
+
+> Warm cream with deep teal (`#0F766E`) accents, based on Blue Professional. Request it by name or alias: `Teal Professional`, `PKUfudawei`.
 
 ### [Bold Poster](https://github.com/zarazhangrui/beautiful-html-templates/tree/main/templates/bold-poster/)
 
@@ -580,7 +572,6 @@ Uses [Playwright](https://playwright.dev) to screenshot each slide at 1920×1080
 ## Requirements
 
 - A local coding agent with filesystem access and the ability to run shell commands
-- Claude Code is required only for the custom marketplace-source install and `/frontend-slides:frontend-slides` command
 - For PPT conversion: Python with `python-pptx` library
 - For URL deployment: Node.js + Vercel account (free)
 - For PDF export: Node.js (Playwright installs automatically)

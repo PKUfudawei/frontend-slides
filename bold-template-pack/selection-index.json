@@ -2,7 +2,7 @@
   "schema_version": 1,
   "pack_name": "Beautiful HTML Templates - Bold Design Pack",
   "source_repo": "zarazhangrui/beautiful-html-templates",
-  "template_count": 34,
+  "template_count": 35,
   "usage": {
     "selection": "Read this compact index first to shortlist bold templates from metadata.",
     "previews": "For title-slide previews, read only the preview_md files for the shortlisted bold candidates.",
@@ -828,6 +828,35 @@
       "avoid_for": "Contexts that should feel quiet or institutional — the black-and-electric-yellow palette is the loudest in the library.",
       "preview_md": "bold-template-pack/templates/studio/preview.md",
       "design_md": "bold-template-pack/templates/studio/design.md"
+    },
+    {
+      "slug": "teal-professional",
+      "name": "Teal Professional (PKUfudawei)",
+      "tagline": "Cream paper background with deep teal accents; clean modern professional.",
+      "mood": [
+        "professional",
+        "modern",
+        "calm",
+        "trustworthy"
+      ],
+      "tone": [
+        "clean",
+        "considered",
+        "polished",
+        "neutral"
+      ],
+      "formality": "medium-high",
+      "density": "medium",
+      "scheme": "light",
+      "best_for": "Anything that should feel modern-considered and lightly authoritative: B2B SaaS pitches, consulting deliverables, advisory updates, investor reports. Also a clean, tasteful choice whenever you want to read as professional without going stiff — research synthesis, internal reviews, brand work for service businesses.",
+      "avoid_for": "Contexts where the deck should feel hot, playful, or intentionally informal — the cool deep-teal restraint will read as overly polished.",
+      "aliases": [
+        "PKUfudawei",
+        "Teal Professional"
+      ],
+      "source_repo": "PKUfudawei/beautiful-html-templates",
+      "preview_md": "bold-template-pack/templates/teal-professional/preview.md",
+      "design_md": "bold-template-pack/templates/teal-professional/design.md"
     },
     {
       "slug": "vellum",
